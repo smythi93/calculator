@@ -11,7 +11,9 @@ from math import tan as rtan
 
 def sqrt(x):
     """Computes the square root of x, using the Newton-Raphson method"""
-    x = max(x, 0)
+    if x == 0:
+        return 0
+    assert x > 0
     approx = None
     guess = x / 2
     while approx != guess:
